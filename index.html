@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Закупки и локализация</title>
+<meta name="description" content="Закупки группы АО «ФНБ «Самрук-Қазына» и локализация производств в РК — 5 слайдов для руководства (данные на 15.10.2026)">
+<style>
+:root{
+  --navy:#0B2545; --teal:#13A89E; --gold:#C9A227; --red:#C0392B; --ink:#1d2633; --muted:#5A6473;
+  --bg:#F4F6F9; --surface:#ffffff; --line:#dde2ea; --soft:#eef2f7; --teal-soft:#e3f5f3; --red-soft:#fbeceb; --gold-soft:#faf4e0;
+  --head:var(--navy);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --navy:#7fa6d9; --teal:#2cc4b8; --gold:#e0bd4a; --red:#e2675a; --ink:#e6ebf2; --muted:#a3adbb;
+    --bg:#0d1420; --surface:#152032; --line:#2a3850; --soft:#1b2940; --teal-soft:#123532; --red-soft:#3a1d1c; --gold-soft:#352d12;
+    --head:#dbe6f5;
+  }
+}
+:root[data-theme="dark"]{
+  --navy:#7fa6d9; --teal:#2cc4b8; --gold:#e0bd4a; --red:#e2675a; --ink:#e6ebf2; --muted:#a3adbb;
+  --bg:#0d1420; --surface:#152032; --line:#2a3850; --soft:#1b2940; --teal-soft:#123532; --red-soft:#3a1d1c; --gold-soft:#352d12;
+  --head:#dbe6f5;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Arial,Calibri,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+header.top{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:1px solid var(--line)}
+.top-in{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
+.brand{font-weight:700;color:var(--head);white-space:nowrap;font-size:14px}
+nav.tabs{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs a{white-space:nowrap;text-decoration:none;font-size:13px;padding:6px 10px;border-radius:6px;color:var(--muted)}
+nav.tabs a:hover{background:var(--soft);color:var(--ink)}
+nav.tabs a.on{background:var(--navy);color:var(--surface)}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:6px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--soft)}
+main{max-width:1180px;margin:0 auto;padding:24px 16px 60px}
+.hero{padding:28px 0 8px}
+.hero h1{margin:0 0 6px;color:var(--head);font-size:clamp(24px,3.4vw,34px);line-height:1.2}
+.hero p{margin:0;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font-size:12px;padding:4px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
+.chip.warn{border-color:var(--gold);color:var(--ink);background:var(--gold-soft)}
+
+section.slide{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin:22px 0;overflow:hidden}
+.bar-top{display:flex;justify-content:space-between;align-items:center;padding:8px 22px;background:var(--navy);color:var(--surface);font-size:12px;letter-spacing:.04em;text-transform:uppercase}
+:root[data-theme="dark"] .bar-top{color:#0d1420}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .bar-top{color:#0d1420}}
+.s-body{padding:22px 22px 14px}
+.s-body h2{margin:0 0 12px;color:var(--head);font-size:clamp(20px,2.4vw,27px);line-height:1.25}
+.gist{display:flex;gap:10px;align-items:flex-start;background:var(--teal-soft);border-left:4px solid var(--teal);padding:10px 14px;border-radius:6px;margin-bottom:18px;font-size:14px}
+.gist b{color:var(--teal);white-space:nowrap}
+.src{padding:10px 22px 14px;font-size:11px;color:var(--muted);border-top:1px dashed var(--line)}
+.notes{margin:0 22px 16px}
+.notes summary{cursor:pointer;font-size:13px;color:var(--muted)}
+.notes div{font-size:14px;padding:10px 14px;background:var(--soft);border-radius:6px;margin-top:8px}
+
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:1.25fr 1fr}
+.g2e{grid-template-columns:1fr 1fr}
+@media (max-width:860px){.g2,.g2e{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:10px;padding:16px;background:var(--surface)}
+.card h3{margin:0 0 10px;font-size:14px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+
+/* chevrons */
+.flow{display:flex;gap:6px;flex-wrap:wrap}
+.step{flex:1 1 150px;position:relative;background:var(--soft);border-radius:8px;padding:12px 12px 12px 14px;border-top:3px solid var(--navy)}
+.step .n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--navy);color:var(--surface);font-size:12px;font-weight:700;margin-bottom:6px}
+.step b{display:block;color:var(--head);margin-bottom:2px}
+.step span{font-size:13px;color:var(--muted)}
+.step.last{border-top-color:var(--teal)}
+.step.last .n{background:var(--teal)}
+.vflow{flex-direction:column}
+.vflow .step{flex:none}
+
+/* KPI */
+.kpis{display:grid;gap:12px}
+.kpi{border-radius:10px;padding:14px 16px;background:var(--soft)}
+.kpi .v{font-size:clamp(28px,3.6vw,40px);font-weight:700;color:var(--gold);line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi .l{font-size:13px;color:var(--muted)}
+.kpi .d{font-size:12px;color:var(--teal);font-weight:700}
+.kpis.row{grid-template-columns:repeat(3,1fr)}
+@media (max-width:700px){.kpis.row{grid-template-columns:1fr}}
+
+.gloss{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}
+@media (max-width:860px){.gloss{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.gloss{grid-template-columns:1fr}}
+.gloss div{border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-size:13px}
+.gloss b{display:block;color:var(--head);font-size:14px}
+
+/* stacked 100% */
+.stack{display:flex;gap:2px;height:46px;border-radius:6px;overflow:hidden;margin:6px 0 8px}
+.stack div{display:flex;align-items:center;padding:0 12px;color:#fff;font-weight:700;font-size:14px;cursor:default;transition:filter .15s}
+.stack div:hover{filter:brightness(1.12)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:middle}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.up{color:var(--teal);font-weight:700}.down{color:var(--red);font-weight:700}
+.tablewrap{overflow-x:auto}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0 0 0 18px;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 12px 8px;font-size:14px}
+.tl li::before{content:"";position:absolute;left:-25px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--navy)}
+.tl li:last-child::before{border-color:var(--teal);background:var(--teal)}
+.tl b{color:var(--head);display:block;font-size:13px}
+
+/* bars */
+.chart{position:relative}
+.bars{display:flex;align-items:flex-end;gap:18px;height:220px;padding:0 6px;border-bottom:1px solid var(--line)}
+.bars .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;cursor:default}
+.bars .val{font-size:15px;font-weight:700;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.bars .b{width:min(72px,70%);background:var(--navy);border-radius:4px 4px 0 0;transition:height .8s cubic-bezier(.2,.8,.2,1),opacity .15s;height:0}
+.bars .col:hover .b{opacity:.85}
+.bars .b.hl{background:var(--teal)}
+.bars .b.part{background:repeating-linear-gradient(135deg,var(--teal) 0 6px,color-mix(in srgb,var(--teal) 60%,var(--surface)) 6px 10px)}
+.xlab{display:flex;gap:18px;padding:6px 6px 0}
+.xlab div{flex:1;text-align:center;font-size:13px;color:var(--muted)}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;padding:6px 9px;border-radius:6px;opacity:0;transition:opacity .1s;z-index:50;max-width:260px}
+
+/* VC dumbbell-ish */
+.vc-row{display:grid;grid-template-columns:130px 1fr 92px;align-items:center;gap:10px;margin:10px 0;font-size:14px}
+.vc-track{position:relative;height:10px;background:var(--soft);border-radius:5px}
+.vc-fill{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--navy);width:0;transition:width .8s}
+.vc-prev{position:absolute;top:-4px;width:2px;height:18px;background:var(--muted)}
+.vc-row .num{text-align:right}
+
+.measures{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:860px){.measures{grid-template-columns:1fr 1fr}}
+.measure{border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:8px;padding:10px 12px;font-size:13px}
+.measure b{display:block;font-size:15px;color:var(--head)}
+.callout{background:var(--gold-soft);border:1px solid var(--gold);border-radius:8px;padding:12px 14px;font-size:14px}
+.callout .big{font-size:26px;font-weight:700;color:var(--gold)}
+
+.dyn{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:600px){.dyn{grid-template-columns:1fr}}
+.total{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-around;background:var(--navy);color:var(--surface);border-radius:10px;padding:16px;margin-top:16px;text-align:center}
+:root[data-theme="dark"] .total{color:#0d1420}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .total{color:#0d1420}}
+.total .v{font-size:30px;font-weight:700}
+.total .l{font-size:13px;opacity:.85}
+
+.pp{display:grid;grid-template-columns:1fr 34px 1fr;gap:0;align-items:stretch}
+.pp .h{font-size:12px;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 0 6px}
+.pp .p,.pp .s{padding:12px 14px;margin-bottom:10px;border-radius:8px;font-size:14px}
+.pp .p{background:var(--red-soft);border-left:4px solid var(--red)}
+.pp .s{background:var(--teal-soft);border-left:4px solid var(--teal)}
+.pp .arr{display:grid;place-items:center;color:var(--muted);margin-bottom:10px;font-size:18px}
+.pp .p b{color:var(--red)}
+@media (max-width:700px){.pp{grid-template-columns:1fr}.pp .arr{transform:rotate(90deg);margin:-4px 0 4px}.pp .h:nth-child(2),.pp .h:nth-child(3){display:none}}
+.ask{margin-top:8px;background:var(--navy);color:var(--surface);border-radius:10px;padding:16px 18px;font-size:15px}
+:root[data-theme="dark"] .ask{color:#0d1420}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ask{color:#0d1420}}
+.ask b{color:var(--gold)}
+:root[data-theme="dark"] .ask b{color:#5a4300}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ask b{color:#5a4300}}
+.est{font-size:11px;color:var(--muted);font-style:italic}
+
+.open ol{margin:0;padding-left:20px}
+.open li{margin-bottom:8px;font-size:14px}
+footer{max-width:1180px;margin:0 auto;padding:0 16px 40px;font-size:12px;color:var(--muted)}
+footer a{word-break:break-all}
+
+/* clickable norms */
+[data-norm]{cursor:pointer;position:relative;transition:box-shadow .15s,transform .15s}
+[data-norm]:hover,[data-norm]:focus-visible{box-shadow:0 0 0 2px var(--teal);outline:none;border-radius:8px}
+[data-norm]::after{content:"§";position:absolute;top:4px;right:6px;font-size:11px;font-weight:700;color:var(--teal);opacity:.55}
+[data-norm]:hover::after{opacity:1}
+tr[data-norm]::after,li[data-norm]::after{position:static;margin-left:6px}
+tr[data-norm]:hover td{background:var(--teal-soft)}
+.bars .col[data-norm]::after{top:auto;bottom:-2px}
+.hint{display:inline-flex;align-items:center;gap:6px;font-size:13px;margin-top:12px;color:var(--teal);font-weight:600}
+.hint i{font-style:normal;display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--teal-soft);border:1px solid var(--teal)}
+.ov{position:fixed;inset:0;background:rgba(5,12,24,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:60}
+.ov.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);background:var(--surface);border-left:1px solid var(--line);z-index:61;transform:translateX(100%);transition:transform .25s ease;display:flex;flex-direction:column}
+.drawer.on{transform:none}
+.dr-h{padding:16px 18px 12px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:flex-start}
+.dr-h .k{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--teal);font-weight:700}
+.dr-h h3{margin:2px 0 0;color:var(--head);font-size:19px;line-height:1.25}
+.dr-h .btn{margin-left:auto}
+.dr-b{padding:16px 18px;overflow-y:auto;flex:1}
+.dr-b h4{margin:16px 0 8px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.dr-b h4:first-child{margin-top:0}
+.why{background:var(--soft);border-radius:8px;padding:10px 12px;font-size:14px}
+.ref{border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:8px;padding:10px 12px;margin-bottom:8px;font-size:14px}
+.ref b{display:block;color:var(--head);font-size:13px;margin-bottom:2px}
+.ref.ext{border-left-color:var(--gold)}
+.ref.chk{border-left-color:var(--red)}
+.ref .tag{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;padding:1px 6px;border-radius:4px;margin-left:6px;vertical-align:middle;background:var(--red-soft);color:var(--red)}
+.dr-f{padding:10px 18px 14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.dr-f a{color:var(--teal)}
+@media (max-width:600px){.drawer{top:auto;height:82vh;width:100%;border-left:0;border-top:1px solid var(--line);border-radius:14px 14px 0 0;transform:translateY(100%)}}
+
+/* presentation mode */
+body.present header.top,body.present .hero,body.present #glossary,body.present #open,body.present footer{display:none}
+body.present main{padding:0;max-width:none}
+body.present section.slide{display:none;margin:0;border-radius:0;min-height:100vh;border:0}
+body.present section.slide.cur{display:block}
+body.present .s-body{max-width:1240px;margin:0 auto;padding:30px 40px}
+.pnav{display:none;position:fixed;right:16px;bottom:16px;gap:6px;z-index:30}
+body.present .pnav{display:flex}
+@media print{header.top,.pnav,.notes{display:none}section.slide{break-inside:avoid;page-break-after:always}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">Закупки · Локализация</div>
+    <nav class="tabs" id="tabs">
+      <a href="#s1">1 · Простыми словами</a>
+      <a href="#s2">2 · Порядок</a>
+      <a href="#s3">3 · ОТП и ВЦ</a>
+      <a href="#s4">4 · Офтейк</a>
+      <a href="#s5">5 · Решения</a>
+      <a href="#glossary">Глоссарий</a>
+      <a href="#open">Сверить</a>
+    </nav>
+    <button class="btn" id="theme" title="Тема">◐</button>
+    <button class="btn" id="present" title="Режим презентации (←/→, Esc)">▶ Показ</button>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <h1>Закупки группы АО «ФНБ «Самрук-Қазына» и локализация производств в РК</h1>
+    <p>Материал для руководства: 5 слайдов, 5–7 минут. Слайд 1 — для всех, слайды 2–5 — цифры и предложения.</p>
+    <div class="meta">
+      <span class="chip">Данные на 15.10.2026</span>
+      <span class="chip">Черновик v1.0</span>
+      <span class="chip warn">Цифры требуют сверки с ТОО «СК-Контракт»</span>
+    </div>
+    <div class="hint"><i>§</i>Нажмите на любой пункт со знаком § — откроется обоснование и норма Порядка закупок</div>
+  </div>
+
+  <!-- SLIDE 1 -->
+  <section class="slide" id="s1">
+    <div class="bar-top"><span>01 / 05</span><span>Простыми словами</span></div>
+    <div class="s-body">
+      <h2>Закупки Фонда — 4 трлн ₸ в год, и большая часть остаётся в Казахстане</h2>
+      <div class="gist"><b>Суть:</b><span>Компании Фонда покупают по единым правилам на одном портале и в первую очередь — у казахстанских производителей.</span></div>
+      <div class="grid g2">
+        <div class="card">
+          <h3>Как это работает</h3>
+          <div class="flow vflow">
+            <div class="step" data-norm="need"><span class="n">1</span><b>Потребность</b><span>Компания группы (КМГ, КТЖ, Казатомпром…) планирует закупку</span></div>
+            <div class="step" data-norm="rules"><span class="n">2</span><b>Правила</b><span>Единый Порядок закупок Фонда определяет способ</span></div>
+            <div class="step" data-norm="portal"><span class="n">3</span><b>Портал</b><span>Всё проходит электронно на zakup.sk.kz</span></div>
+            <div class="step last" data-norm="contract"><span class="n">4</span><b>Договор</b><span>Приоритет — казахстанскому производителю</span></div>
+          </div>
+        </div>
+        <div class="kpis">
+          <div class="kpi" data-norm="total"><div class="v" data-count="4.0" data-dec="1">4,0</div><div class="l">трлн ₸ договоров группы, 2025 г.</div></div>
+          <div class="kpi" data-norm="vc"><div class="v"><span data-count="83">83</span>%</div><div class="l">внутристрановая ценность (ВЦ), 2025 г.</div></div>
+          <div class="kpi" data-norm="otp"><div class="v" data-count="2.2" data-dec="1">2,2</div><div class="l">трлн ₸ у отечественных производителей, 2025 г.</div><div class="d">×2 к 2024 г.</div></div>
+        </div>
+      </div>
+      <div class="gloss">
+        <div data-norm="vc"><b>ВЦ</b>Доля денег договора, которая остаётся в экономике Казахстана</div>
+        <div data-norm="otp"><b>ОТП</b>Компания, которая реально производит товар в Казахстане</div>
+        <div data-norm="offtake"><b>Офтейк</b>«Куплю то, что ты ещё только начнёшь производить» — под это строится завод</div>
+        <div data-norm="oi"><b>Из одного источника</b>Договор без конкурса, по основаниям из Порядка</div>
+      </div>
+    </div>
+    <details class="notes"><summary>Заметки докладчика</summary><div>Фонд — крупнейший заказчик страны: его компании за 2025 г. заключили договоров почти на 4 трлн ₸. Все закупки идут по одному Порядку и на одном портале. 83% этих денег остаются в Казахстане. Закупки у отечественных производителей за год удвоились. Полный глоссарий — внизу страницы.</div></details>
+    <div class="src">Источник: Годовой отчёт АО «Самрук-Қазына» за 2025 г., раздел «Сопровождение закупочной деятельности».</div>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="slide" id="s2">
+    <div class="bar-top"><span>02 / 05</span><span>Порядок и способы закупок</span></div>
+    <div class="s-body">
+      <h2>Порядок закупок обновляется ежегодно, но 62% денег идёт без конкурса</h2>
+      <div class="gist"><b>Суть:</b><span>Единые правила для всей группы; основная задача — расширить конкуренцию.</span></div>
+      <div class="card" style="margin-bottom:18px">
+        <h3>Структура закупок по способу, 2025 г. (3 997 млрд ₸)</h3>
+        <div class="stack">
+          <div data-norm="oi" style="flex:62;background:var(--red)" data-tip="Из одного источника: 2 481 млрд ₸ (62%). 2024 г.: 2 178 млрд ₸ (60%)">62%</div>
+          <div data-norm="competitive" style="flex:38;background:var(--navy)" data-tip="Конкурентные способы: 1 515 млрд ₸ (38%). 2024 г.: 1 447 млрд ₸ (40%)">38%</div>
+        </div>
+        <div class="legend"><span><i style="background:var(--red)"></i>Из одного источника — 2 481 млрд ₸ <span class="down">↑ с 60%</span></span><span><i style="background:var(--navy)"></i>Конкурентные — 1 515 млрд ₸</span></div>
+      </div>
+      <div class="grid g2e">
+        <div class="card">
+          <h3>Способы закупок</h3>
+          <table>
+            <tr data-norm="tender"><td><b>Открытый тендер</b></td><td>основной конкурентный способ</td></tr>
+            <tr data-norm="zcp"><td><b>Запрос ценовых предложений</b></td><td>до 10 000 МРП</td></tr>
+            <tr data-norm="eshop"><td><b>Электронный магазин</b></td><td>каталожные товары, до 20 000 МРП</td></tr>
+            <tr data-norm="oi"><td><b>Из одного источника</b></td><td>без конкурса, по основаниям Порядка</td></tr>
+            <tr data-norm="pko"><td><b>Среди ПКО</b></td><td>поставщики с подтверждённой квалификацией</td></tr>
+            <tr data-norm="kuz"><td><b>КУЗ</b></td><td>29 категорий, эффект 7,4 млрд ₸ (2025)</td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Изменения Порядка</h3>
+          <ul class="tl">
+            <li data-norm="t2022"><b>01.04.2022</b>Новый Порядок закупок, сокращены основания ОИ</li>
+            <li data-norm="t2025"><b>2025</b>Выездные проверки поставщиков; порог пересмотра цены — 10%</li>
+            <li data-norm="tTrusted"><b>01.12.2025</b>Доверенное ПО через электронный магазин</li>
+            <li data-norm="tRegistry"><b>01.01.2026</b>Переход на Реестр казахстанских товаропроизводителей</li>
+            <li data-norm="tHub"><b>21.09.2026</b>Пилот закупок отечественных IT-решений у Astana Hub</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <details class="notes"><summary>Заметки докладчика</summary><div>Порядок действует с 2022 г. и обновляется несколько раз в год. Портал развивается: 160 тыс. зарегистрированных участников. Но 62% денег по-прежнему идёт без конкурса, и доля растёт. Это главный вызов для конкуренции.</div></details>
+    <div class="src">Источники: Годовой отчёт 2025; SKNEWS, 30.03.2022; Tenderplus, 05.12.2025; Profit.kz, 24.09.2026.</div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide" id="s3">
+    <div class="bar-top"><span>03 / 05</span><span>Отечественные производители и ВЦ</span></div>
+    <div class="s-body">
+      <h2>Закупки у казахстанских производителей удвоились — до 2,2 трлн ₸</h2>
+      <div class="gist"><b>Суть:</b><span>Если товар производится в Казахстане, закупка идёт только среди казахстанских производителей.</span></div>
+      <div class="grid g2e">
+        <div class="card chart">
+          <h3>Договоры с ОТП, трлн ₸</h3>
+          <div class="bars" id="otp">
+            <div class="col" data-norm="otp" data-tip="2024 г.: 1,1 трлн ₸, >11,1 тыс. договоров, 2 070 предприятий"><div class="val">1,1</div><div class="b" data-h="1.1"></div></div>
+            <div class="col" data-norm="otp" data-tip="2025 г.: 2 177,6 млрд ₸ (+98%), >8,9 тыс. договоров, 2 283 предприятия"><div class="val">2,2</div><div class="b hl" data-h="2.18"></div></div>
+            <div class="col" data-norm="otp" data-tip="1П 2026: 594,2 млрд ₸ (+46% г/г), >3,8 тыс. договоров — данные за полугодие"><div class="val">0,59</div><div class="b part" data-h="0.594"></div></div>
+          </div>
+          <div class="xlab"><div>2024</div><div>2025 <span class="up">+98%</span></div><div>1П 2026 <span class="up">+46% г/г</span></div></div>
+        </div>
+        <div class="card">
+          <h3>Внутристрановая ценность, 2024 → 2025</h3>
+          <div class="vc-row" data-norm="vc"><span>Общая</span><div class="vc-track"><div class="vc-prev" style="left:82.5%"></div><div class="vc-fill" data-w="83"></div></div><span class="num">82,5 → <b>83%</b></span></div>
+          <div class="vc-row" data-norm="vc"><span>Товары</span><div class="vc-track"><div class="vc-prev" style="left:62%"></div><div class="vc-fill" data-w="65" style="background:var(--gold)"></div></div><span class="num">62 → <b>65%</b></span></div>
+          <div class="vc-row" data-norm="vc"><span>Работы и услуги</span><div class="vc-track"><div class="vc-prev" style="left:92%"></div><div class="vc-fill" data-w="90"></div></div><span class="num">92 → <b class="down">90%</b></span></div>
+          <div class="legend" style="margin-top:6px"><span><i style="background:var(--muted);width:2px;height:12px"></i>значение 2024 г.</span><span><i style="background:var(--navy)"></i>2025 г.</span></div>
+          <div class="callout" data-norm="tRegistry" style="margin-top:16px"><span class="big">46,8 тыс.</span> заявок в Реестр-2026 — около половины отклонено (23 396). Проверка по 26 критериям: налоги, штат, ФОТ, электроэнергия, вода, сырьё.</div>
+        </div>
+      </div>
+      <h3 style="margin:20px 0 10px;font-size:14px;color:var(--muted);text-transform:uppercase">Меры поддержки (более 16)</h3>
+      <div class="measures">
+        <div class="measure" data-norm="mReg"><b>Только Реестр</b>закуп среди производителей из Реестра при их наличии</div>
+        <div class="measure" data-norm="mAdv"><b>Аванс не менее 30%</b>и сокращённые сроки оплаты</div>
+        <div class="measure" data-norm="mSec"><b>Без обеспечения</b>освобождение от обеспечения заявки и договора</div>
+        <div class="measure" data-norm="mPrice"><b>Пересмотр цены</b>при росте стоимости сырья более чем на 10% (было 20%)</div>
+      </div>
+    </div>
+    <details class="notes"><summary>Заметки докладчика</summary><div>За год закупки у ОТП выросли с 1,1 до 2,2 трлн ₸, рост продолжается и в 2026 г. Работает связка: Реестр + преференции. Слабое место — ВЦ в товарах: только 65%. Реестр отсекает псевдопроизводителей — отклонена половина заявок.</div></details>
+    <div class="src">Источники: Годовой отчёт 2025; DKNews, 10.08.2026; Exclusive.kz, 14.10.2026. 1П 2026 — неполный период (штриховка).</div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide" id="s4">
+    <div class="bar-top"><span>04 / 05</span><span>Локализация: офтейк-контракты</span></div>
+    <div class="s-body">
+      <h2>Офтейк-контракт: гарантированный спрос в обмен на новый завод</h2>
+      <div class="gist"><b>Суть:</b><span>Компания Фонда заранее обязуется купить продукцию — инвестор под это строит производство и берёт кредит.</span></div>
+      <div class="flow" style="margin-bottom:18px">
+        <div class="step" data-norm="pool"><span class="n">1</span><b>Пул импортозамещения</b><span>5 530 позиций, 764 млрд ₸ на 2026–2030</span></div>
+        <div class="step" data-norm="offtakeProg"><span class="n">2</span><b>Заявка инвестора</b><span>в любое время</span></div>
+        <div class="step" data-norm="offtakeProg"><span class="n">3</span><b>Оценка</b><span>по 13 критериям</span></div>
+        <div class="step" data-norm="offtakeProg"><span class="n">4</span><b>Комиссия Фонда</b><span>решение по проекту</span></div>
+        <div class="step last" data-norm="offtake"><span class="n">5</span><b>Офтейк из ОИ</b><span>до 10 лет; 1-й год — 100% объёма, далее ≥50%</span></div>
+      </div>
+      <div class="card">
+        <h3>Офтейк-контракты по годам</h3>
+        <div class="dyn" data-norm="offtake">
+          <div class="kpi"><div class="l">2024</div><div class="v" style="font-size:30px">190 млрд ₸</div><div class="l">367 контрактов</div></div>
+          <div class="kpi"><div class="l">2025</div><div class="v" style="font-size:30px">257,5 млрд ₸</div><div class="l">363 контракта · <span class="up">+35%</span></div></div>
+          <div class="kpi"><div class="l">1П 2026</div><div class="v" style="font-size:30px">≈47 млрд ₸</div><div class="l">115 контрактов · одобрено 9 проектов (53 млрд ₸)</div></div>
+        </div>
+      </div>
+      <div class="total" data-norm="offtake">
+        <div><div class="v" data-count="108">108</div><div class="l">проектов</div></div>
+        <div><div class="v"><span data-count="610">610</span> млрд ₸</div><div class="l">объём за 7 лет</div></div>
+        <div><div class="v">&gt;3 000</div><div class="l">рабочих мест</div></div>
+      </div>
+    </div>
+    <details class="notes"><summary>Заметки докладчика</summary><div>Офтейк — главный инструмент локализации: заказчик гарантирует сбыт, а банк кредитует под этот договор. С 2018 г. заключено 1 205 контрактов на ≈564 млрд ₸. В 2025 г. объём вырос на 35%. На рассмотрении ещё 13 проектов на 74 млрд ₸.</div></details>
+    <div class="src">Источники: Годовой отчёт 2025; Invest Hub (investa.kz), 02.10.2026; Закон РК «О промышленной политике», ст. 47, 48, 48-1 — сверить.</div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide" id="s5">
+    <div class="bar-top"><span>05 / 05</span><span>Проблемы и предложения</span></div>
+    <div class="s-body">
+      <h2>Пять решений для роста локализации — на обсуждение</h2>
+      <div class="gist"><b>Суть:</b><span>Инструменты работают; следующий шаг — больше конкуренции, глубже локализация, прозрачнее пул.</span></div>
+      <div class="pp">
+        <div class="h">Проблема</div><div class="h"></div><div class="h">Предложение</div>
+        <div class="p" data-norm="pOI"><b>62%</b> закупок — из одного источника</div><div class="arr">→</div><div class="s" data-norm="pOI">Целевой KPI снижения доли ОИ для ПК; ежеквартальный отчёт по основаниям ОИ</div>
+        <div class="p" data-norm="pVC">ВЦ в товарах — <b>65%</b></div><div class="arr">→</div><div class="s" data-norm="pVC">KPI по ВЦ в товарах для ПК; методика ВЦ с учётом глубины переработки</div>
+        <div class="p" data-norm="pPool">Пул раздроблен: <b>78 из 5 530</b> позиций дают 52% спроса <span class="est">оценка investa.kz</span></div><div class="arr">→</div><div class="s" data-norm="pPool">Агрегировать спрос группы в «якорные лоты» под одно производство</div>
+        <div class="p" data-norm="pExcl"><b>34 из 92</b> проектов исключены <span class="est">оценка investa.kz</span></div><div class="arr">→</div><div class="s" data-norm="pExcl">Публиковать причины исключения; проектный мониторинг исполнения офтейков</div>
+        <div class="p" data-norm="pPseudo">Псевдопроизводители: <b>~50%</b> заявок в Реестр отклонено</div><div class="arr">→</div><div class="s" data-norm="pPseudo">Интеграция Реестра с Нацкаталогом и таможенными данными (уже планируется)</div>
+      </div>
+      <div class="ask" data-norm="ask"><b>Что требуется от руководства:</b> одобрить направление работ и поручить ТОО «СК-Контракт» совместно с ПК подготовить изменения в Порядок к [дата].</div>
+    </div>
+    <details class="notes"><summary>Заметки докладчика</summary><div>Пять проблем подтверждены цифрами отчёта и аналитикой. По каждой — конкретная мера. Предложения проектные, требуют согласования с профильным департаментом. Просим одобрить направление и дать поручение со сроком.</div></details>
+    <div class="src">Источники: Годовой отчёт 2025; Invest Hub (investa.kz), 02.10.2026 — оценка, требует сверки; Exclusive.kz, 14.10.2026.</div>
+  </section>
+
+  <!-- GLOSSARY -->
+  <section class="slide" id="glossary">
+    <div class="bar-top"><span>Приложение</span><span>Глоссарий</span></div>
+    <div class="s-body tablewrap">
+      <table>
+        <tr><th>Термин</th><th>Простое объяснение</th></tr>
+        <tr><td><b>ФНБ «Самрук-Қазына» (Фонд)</b></td><td>Государственный холдинг, которому принадлежат крупнейшие компании страны (КМГ, КТЖ, Казатомпром, Самрук-Энерго, QazaqGaz и др.)</td></tr>
+        <tr><td><b>Группа Фонда / ПК</b></td><td>Фонд и организации, ≥50% акций которых прямо или косвенно принадлежат Фонду. Все закупают по единому Порядку</td></tr>
+        <tr><td><b>Порядок закупок</b></td><td>Внутренний «закон» Фонда о закупках: способы, сроки, требования к поставщикам. Действует с 01.04.2022</td></tr>
+        <tr><td><b>zakup.sk.kz (ИСЭЗ)</b></td><td>Электронный портал всех закупок группы. Оператор — ТОО «Самрук-Казына Контракт»</td></tr>
+        <tr><td><b>ОТП</b></td><td>Отечественный товаропроизводитель — компания, которая реально производит товар в Казахстане</td></tr>
+        <tr><td><b>ВЦ</b></td><td>Доля денег договора, которая остаётся в экономике Казахстана (местные товары, работы, персонал)</td></tr>
+        <tr><td><b>Реестр казахстанских товаропроизводителей</b></td><td>Единый государственный список проверенных производителей (с 01.01.2026). Только они получают преференции</td></tr>
+        <tr><td><b>Из одного источника (ОИ)</b></td><td>Договор без конкурса — с заранее определённым поставщиком по основаниям Порядка</td></tr>
+        <tr><td><b>Офтейк-контракт</b></td><td>Долгосрочный договор «куплю то, что ты ещё только начнёшь производить». Можно заложить в банке под кредит</td></tr>
+        <tr><td><b>Пул импортозамещения</b></td><td>Перечень импортных товаров, которые компании группы готовы покупать у будущих казахстанских заводов</td></tr>
+        <tr><td><b>ПКО</b></td><td>Предварительный квалификационный отбор: поставщик заранее подтверждает квалификацию</td></tr>
+        <tr><td><b>КУЗ</b></td><td>Категорийное управление закупками: многолетняя стратегия по крупной категории товаров</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- OPEN QUESTIONS -->
+  <section class="slide open" id="open">
+    <div class="bar-top"><span>Приложение</span><span>Что сверить до показа</span></div>
+    <div class="s-body">
+      <ol>
+        <li><b>Реквизиты</b> Закона о закупках квазигоссектора и решения СД об утверждении Порядка — adilet.zan.kz / zakup.sk.kz.</li>
+        <li><b>Реестр:</b> по одним данным включено ~2,5 тыс. из 46,8 тыс. заявок, по другим — более 10 тыс. из 41 тыс. Уточнить у МПС.</li>
+        <li><b>Офтейк:</b> 257,5 млрд ₸ — за 2025 г.; 564 млрд ₸ — накопленно 2018–2025. Подтвердить у ТОО «СК-Контракт».</li>
+        <li><b>Аналитика пула</b> (78 позиций, 34 из 92 проектов) — оценка investa.kz; подтвердить по файлу пула на skc.kz.</li>
+        <li><b>Предложения слайда 5</b> — согласовать с профильным департаментом, уточнить срок поручения.</li>
+        <li><b>Логотип / шаблон</b> Фонда — вставляется вручную после согласования.</li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <b>Источники:</b>
+  <a href="https://sk.kz/ar2025/procurement-support.html" target="_blank" rel="noopener">Годовой отчёт 2025 — закупки</a> ·
+  <a href="https://sk.kz/ar2025/chairman-board.html" target="_blank" rel="noopener">Обращение Председателя СД</a> ·
+  <a href="https://sknews.kz/news/view/vvoditsya-novyy-poryadok-zakupok-ao-samruk-kazyna" target="_blank" rel="noopener">SKNEWS</a> ·
+  <a href="https://tenderplus.kz/blog/izmeneniya-v-poryadke-zakupok-samruk-kazyna" target="_blank" rel="noopener">Tenderplus</a> ·
+  <a href="https://dknews.kz/ru/ekonomika/400091-kazahstan-perehodit-ot-sborki-k-sobstvennomu" target="_blank" rel="noopener">DKNews</a> ·
+  <a href="https://exclusive.kz/95-zajavok-ne-proshli-kak-rabotaet-reestr-otechestvennyh-proizvoditelej/" target="_blank" rel="noopener">Exclusive.kz</a> ·
+  <a href="https://profit.kz/news/74930/" target="_blank" rel="noopener">Profit.kz</a> ·
+  <a href="https://investa.kz/blog/kak-poluchit-ofteyk-kontrakt" target="_blank" rel="noopener">Invest Hub</a>
+</footer>
+
+<div class="pnav"><button class="btn" id="prev">←</button><span class="btn" id="pc">1/5</span><button class="btn" id="next">→</button><button class="btn" id="exit">Esc</button></div>
+<div class="tip" id="tip"></div>
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drT">
+  <div class="dr-h"><div><div class="k">Обоснование и норма</div><h3 id="drT"></h3></div><button class="btn" id="drX" aria-label="Закрыть">✕</button></div>
+  <div class="dr-b" id="drB"></div>
+  <div class="dr-f">Краткое изложение норм Порядка осуществления закупок АО «Самрук-Қазына» (решение СД от 03.03.2022 № 193) по редакции на 21.09.2026. Дословный текст — <a href="https://continent-online.com/document/?doc_id=34369916" target="_blank" rel="noopener">continent-online.com</a> · <a href="https://prg.kz/document/?doc_id=34369916" target="_blank" rel="noopener">prg.kz</a>. Нормы с пометкой «сверить» и иные акты требуют проверки юристом.</div>
+</aside>
+
+<script>
+(function(){
+  // theme toggle
+  var root=document.documentElement;
+  try{var t=localStorage.getItem('theme');if(t)root.setAttribute('data-theme',t);}catch(e){}
+  document.getElementById('theme').onclick=function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var nxt=cur==='dark'?'light':'dark';root.setAttribute('data-theme',nxt);
+    try{localStorage.setItem('theme',nxt);}catch(e){}
+  };
+
+  // tooltips
+  var tip=document.getElementById('tip');
+  document.querySelectorAll('[data-tip]').forEach(function(el){
+    el.addEventListener('mousemove',function(e){tip.textContent=el.dataset.tip;tip.style.opacity=1;
+      var x=Math.min(e.clientX+14,innerWidth-tip.offsetWidth-8);tip.style.left=x+'px';tip.style.top=(e.clientY+14)+'px';});
+    el.addEventListener('mouseleave',function(){tip.style.opacity=0;});
+  });
+
+  // animations when visible
+  function fmt(n,d){return n.toFixed(d).replace('.',',');}
+  function animate(sec){
+    sec.querySelectorAll('.bars .b').forEach(function(b){b.style.height=(parseFloat(b.dataset.h)/2.3*100)+'%';});
+    sec.querySelectorAll('.vc-fill').forEach(function(f){f.style.width=f.dataset.w+'%';});
+    sec.querySelectorAll('[data-count]').forEach(function(el){
+      if(el.dataset.done)return;el.dataset.done=1;
+      var end=parseFloat(el.dataset.count),d=+(el.dataset.dec||0),t0=performance.now();
+      (function step(t){var p=Math.min((t-t0)/900,1),v=end*(1-Math.pow(1-p,3));el.textContent=fmt(v,d);if(p<1)requestAnimationFrame(step);})(t0);
+    });
+  }
+  var slides=[].slice.call(document.querySelectorAll('section.slide'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)animate(e.target);});},{threshold:.2});
+    slides.forEach(function(s){io.observe(s);});
+  }else slides.forEach(animate);
+
+  // active tab
+  var links=[].slice.call(document.querySelectorAll('#tabs a'));
+  var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+    links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id);});}});},{rootMargin:'-40% 0px -55% 0px'});
+  slides.forEach(function(s){so.observe(s);});
+
+  // presentation mode
+  var deck=slides.filter(function(s){return /^s\d$/.test(s.id);}),i=0,body=document.body;
+  function show(n){i=Math.max(0,Math.min(deck.length-1,n));deck.forEach(function(s,k){s.classList.toggle('cur',k===i);});
+    document.getElementById('pc').textContent=(i+1)+'/'+deck.length;animate(deck[i]);scrollTo(0,0);}
+  function enter(){body.classList.add('present');show(i);if(document.documentElement.requestFullscreen)document.documentElement.requestFullscreen().catch(function(){});}
+  function exit(){body.classList.remove('present');if(document.fullscreenElement)document.exitFullscreen();deck[i].scrollIntoView();}
+  document.getElementById('present').onclick=enter;
+  document.getElementById('prev').onclick=function(){show(i-1);};
+  document.getElementById('next').onclick=function(){show(i+1);};
+  document.getElementById('exit').onclick=exit;
+  // ---- norms of the Порядок: [type, reference, summary]; type: '' Порядок, 'ext' other act, 'chk' needs check
+  var P='Порядок, ';
+  var N={
+    need:{t:'Потребность и план закупок',why:'Закупка начинается не с поставщика, а с потребности: компания консолидирует её и включает в План закупок. От суммы в плане зависит допустимый способ закупки.',r:[
+      ['','Ст. 11','Консолидация потребности в товарах, работах, услугах.'],
+      ['','Ст. 12','Формирование Плана закупок.'],
+      ['','Ст. 49, п. 2','Дробление объёмов для обхода порогов не допускается.']]},
+    rules:{t:'Единый Порядок для всей группы',why:'Все компании группы закупают по одному документу прямого действия, поэтому правила одинаковы для КМГ, КТЖ, Казатомпрома и других.',r:[
+      ['','Ст. 1','Сфера применения: Фонд и юрлица, 50% и более голосующих акций (долей) которых прямо или косвенно принадлежат Фонду.'],
+      ['','Ст. 29, п. 1','Способы выбора поставщика: тендер (открытый, двухэтапный), запрос ценовых предложений, из одного источника; закупки через электронный магазин — гл. 16.'],
+      ['','Ст. 29, п. 2','Способ выбирается заказчиком самостоятельно с учётом требований Порядка.'],
+      ['ext','Решение СД Фонда от 03.03.2022 № 193','Утверждение Порядка; действует с 01.04.2022.']]},
+    portal:{t:'Электронный портал закупок',why:'Все процедуры проходят на веб-портале, который ведёт Оператор Фонда по закупкам — ТОО «Самрук-Казына Контракт». Это обеспечивает прозрачность и единые реестры.',r:[
+      ['','Ст. 3','Компетенция Фонда и Оператора Фонда по закупкам в управлении закупочной деятельностью.'],
+      ['','Ст. 2, пп. 77)','Электронный магазин — информационная система, интегрированная с веб-порталом закупок.'],
+      ['','Ст. 26, п. 1','Перечень ненадёжных поставщиков ведёт Оператор Фонда на веб-портале.']]},
+    contract:{t:'Договор: приоритет казахстанскому производителю',why:'На этапе выбора поставщика и заключения договора Порядок даёт товаропроизводителю приоритет и особые условия оплаты.',r:[
+      ['','Ст. 29, п. 6','Заказчик предоставляет приоритет приобретения товаров у товаропроизводителей закупаемого товара.'],
+      ['','Ст. 61, п. 9','В договоре с товаропроизводителем — предоплата не менее 30% суммы договора.'],
+      ['','Ст. 61, п. 12','Сокращённый срок расчёта с товаропроизводителем.'],
+      ['','Ст. 61, п. 15','Обязательство поставить товар собственного производства; подтверждение — выписка из реестра казахстанских товаропроизводителей.']]},
+    total:{t:'4,0 трлн ₸ договоров',why:'Цифра — данные отчётности по закупкам группы за 2025 г. (Годовой отчёт Фонда). Обязанность вести отчётность установлена Порядком.',r:[
+      ['','Ст. 70','Отчётность по вопросам закупок.'],
+      ['ext','Годовой отчёт АО «Самрук-Қазына» 2025','Сумма заключённых договоров — 3 997 млрд ₸.']]},
+    vc:{t:'Внутристрановая ценность (ВЦ)',why:'Отдельного определения ВЦ и методики её расчёта в тексте Порядка нет. Показатель берётся из отчётности; цель повышения местного содержания закреплена решением СД об утверждении Порядка.',r:[
+      ['chk','Решение СД от 03.03.2022 № 193, п. 4','Цель — повышение доли местного содержания в закупках. Методику расчёта ВЦ сверить с СК-Контракт.'],
+      ['','Ст. 29, п. 6; ст. 61, п. 15','Инструменты роста ВЦ: приоритет товаропроизводителям и обязательство поставить товар собственного производства.']]},
+    otp:{t:'Закупки у отечественных товаропроизводителей',why:'Товаропроизводитель в Порядке — это лицо из государственного реестра казахстанских товаропроизводителей. При наличии таких производителей закупка ограничивается ими во всех основных способах.',r:[
+      ['','Ст. 2, пп. 62)','Товаропроизводитель — поставщик, включённый в реестр казахстанских товаропроизводителей (ведёт уполномоченный орган в области промышленности).'],
+      ['','Ст. 29, п. 6','Приоритет приобретения товаров у товаропроизводителей.'],
+      ['','Ст. 35, п. 4, пп. 1)','Тендер может проводиться только среди товаропроизводителей закупаемого товара.'],
+      ['','Ст. 37, п. 4','Запрос ценовых предложений — с допуском только товаропроизводителей.'],
+      ['','Ст. 58, п. 5-1','Электронный магазин: при закупке у товаропроизводителей выбирается не менее двух.'],
+      ['','Ст. 59, п. 1, пп. 21)','Закупка до 1 000 МРП: при наличии товаропроизводителя — у него.']]},
+    oi:{t:'Закупки из одного источника',why:'ОИ допускается только по исчерпывающему перечню оснований ст. 59. Чтобы объяснить долю 62%, нужна разбивка сумм по подпунктам — в публичной отчётности её нет.',r:[
+      ['','Ст. 59, п. 1','Исчерпывающий перечень оснований (21 подпункт, часть исключена), в т.ч.: монополии и исключительные права (пп. 1), офтейк (пп. 8), ЧС и аварии (пп. 9), исполнение обязательств заказчика как поставщика (пп. 11), поручение Главы государства / единственного акционера (пп. 13), закупки внутри группы по Приложению № 12 (пп. 17), до 1 000 МРП (пп. 21).'],
+      ['','Ст. 59','По ряду оснований (пп. 1 абз. 4, 6, 11, 14) — согласование со службой комплаенс.'],
+      ['','Ст. 38','Формирование документации для закупки из одного источника.'],
+      ['','Приложение № 12','Перечень ТРУ, закупаемых у организаций группы из одного источника.']]},
+    competitive:{t:'Конкурентные способы',why:'Конкурентные способы — тендер, запрос ценовых предложений и электронный магазин. Их доля в 2025 г. — 38%.',r:[
+      ['','Ст. 29, п. 1','Перечень способов закупок.'],
+      ['','Ст. 39–48','Открытый тендер, тендер на понижение, двухэтапный тендер.'],
+      ['','Ст. 49–57','Запрос ценовых предложений (в т.ч. на понижение).'],
+      ['','Ст. 58','Электронный магазин.']]},
+    tender:{t:'Открытый тендер',why:'Основной конкурентный способ без ограничения по сумме; содержит преференции для товаропроизводителей.',r:[
+      ['','Ст. 39–45','Порядок открытого тендера, рассмотрение заявок, итоги, тендер с ограниченным участием.'],
+      ['','Ст. 46–48','Тендер на понижение; двухэтапный тендер.'],
+      ['','Ст. 36, п. 6, пп. 4)','Товаропроизводители закупаемого товара не вносят обеспечение тендерной заявки.'],
+      ['','Ст. 42, п. 11','При равенстве условных цен побеждает товаропроизводитель, затем субъект МСП.']]},
+    zcp:{t:'Запрос ценовых предложений',why:'Упрощённый конкурентный способ для закупок с плановой суммой до 10 000 МРП.',r:[
+      ['','Ст. 49, п. 1, пп. 1)','Применяется, если плановая сумма без НДС не превышает 10 000 МРП.'],
+      ['','Ст. 49, п. 3','Не применяется к СМР с утверждённой сметой и комплексным работам.'],
+      ['','Ст. 37, п. 4','Можно ограничить участие товаропроизводителями, организациями инвалидов, производителями доверенных цифровых объектов, участниками «Астана Хаб».'],
+      ['','Ст. 55–57','ЗЦП с ограниченным участием и на понижение.']]},
+    eshop:{t:'Электронный магазин',why:'Быстрые закупки каталожных позиций с автоматическим выбором победителя по цене.',r:[
+      ['','Ст. 58, п. 1','Годовая сумма однородных ТРУ — не более 20 000 МРП (кроме доверенных цифровых объектов).'],
+      ['','Ст. 58, п. 2','Только по категориям, утверждённым Правлением Фонда.'],
+      ['','Ст. 58, п. 9','Победитель определяется автоматически по наименьшей цене.'],
+      ['','Ст. 58, п. 13','Расчёт — в течение 5 рабочих дней после подписания актов.']]},
+    pko:{t:'Закупки среди квалифицированных поставщиков (ПКО)',why:'Поставщик проходит квалификацию заранее и затем участвует в закупках выбранных категорий без повторной проверки.',r:[
+      ['','Ст. 14–25','Порядок предварительного квалификационного отбора и Реестр квалифицированных поставщиков (КПП).'],
+      ['','Ст. 15','Определение ТРУ (категорий), закупаемых среди КПП.'],
+      ['','Ст. 21, п. 3','Настольный аудит — не более 6 рабочих дней.'],
+      ['','Ст. 22, п. 6','Результаты ПКО действительны 3 года.']]},
+    kuz:{t:'Категорийное управление закупками (КУЗ)',why:'Крупные категории закупаются по многолетним стратегиям, а не разовыми лотами — это даёт экономию и предсказуемый спрос для производителей.',r:[
+      ['','Ст. 4–5','Категоризация закупок и определение приоритетных категорий.'],
+      ['','Ст. 6–8','Разработка, реализация и мониторинг закупочных категорийных стратегий.'],
+      ['','Ст. 9','Развитие поставщиков.'],
+      ['','Ст. 67','Управление эффективностью поставщиков в рамках КУЗ.']]},
+    t2022:{t:'Новый Порядок закупок (2022)',why:'Порядок заменил прежние правила, стал документом прямого действия для всей группы; перечень оснований ОИ сокращён.',r:[
+      ['ext','Решение СД Фонда от 03.03.2022 № 193','Утверждение Порядка; вступил в силу 01.04.2022.'],
+      ['','Ст. 59, п. 1','Действующий исчерпывающий перечень оснований ОИ (ряд подпунктов исключён).'],
+      ['','Ст. 74','Переходные положения.']]},
+    t2025:{t:'Выездные проверки и пересмотр цены',why:'Выезд к поставщику отсекает тех, у кого нет заявленных мощностей; пересмотр цены защищает производителя при росте стоимости сырья.',r:[
+      ['','Ст. 42, п. 8-1','Тендерная комиссия вправе выехать к месту нахождения объектов поставщика; срок рассмотрения продлевается не более чем на 10 рабочих дней.'],
+      ['','Ст. 42, п. 9, пп. 7)','Заявка отклоняется при выявленном несоответствии или отказе в доступе.'],
+      ['','Ст. 65, п. 1, пп. 8)','Увеличение суммы договора с товаропроизводителем при росте стоимости сырья/комплектующих более чем на 10% — не чаще раза в квартал и двух раз в год, при обосновании и маркетинговом заключении.']]},
+    tTrusted:{t:'Доверенное ПО',why:'Отечественное доверенное ПО закупается упрощённо: через электронный магазин без общего лимита и через ЗЦП с приоритетом производителям.',r:[
+      ['','Ст. 58, п. 1','Лимит 20 000 МРП не распространяется на товары из реестра доверенных цифровых объектов.'],
+      ['','Ст. 49, п. 1, пп. 3-1)','ЗЦП с приоритетом производителям доверенных цифровых объектов.'],
+      ['','Ст. 37, п. 4','Допуск к ЗЦП только производителей доверенных цифровых объектов (для услуг).']]},
+    tRegistry:{t:'Реестр казахстанских товаропроизводителей',why:'С 2026 г. «отечественный производитель» в закупках Фонда — только тот, кто прошёл государственную проверку и включён в Реестр. Половина заявок отклонена — фильтр работает.',r:[
+      ['','Ст. 2, пп. 62)','Товаропроизводитель — поставщик из реестра казахстанских товаропроизводителей.'],
+      ['','Ст. 61, п. 15','Подтверждение собственного производства — выписка из Реестра.'],
+      ['ext','Правила ведения Реестра (приказ МПС № 456 от 14.09.2026)','Цифровая верификация, отраслевая комиссия, видеонаблюдение; проверка по 26 критериям. Реквизиты сверить.']]},
+    tHub:{t:'Пилот: отечественные IT-решения у Astana Hub',why:'Временный механизм приоритетных закупок IT у резидентов Astana Hub через ЗЦП; договор — в короткий срок.',r:[
+      ['','Ст. 2, пп. 41-1)','Перечень работ/услуг, закупаемых через ЗЦП с приоритетом участникам «Астана Хаб»; утверждает Экспертный совет по ИТ Фонда; действует до 01.07.2027.'],
+      ['','Ст. 2, пп. 69-1)','Понятие участника «Астана Хаб».'],
+      ['','Ст. 49, п. 1, пп. 3-2)','ЗЦП по перечню «Астана Хаб» с приоритетом его участникам (до 01.07.2027).'],
+      ['','Ст. 37, п. 4','Допуск к ЗЦП только участников «Астана Хаб».']]},
+    mReg:{t:'Закупка только среди производителей из Реестра',why:'Если товар производится в Казахстане, конкуренция идёт только между казахстанскими производителями — импорт к участию не допускается.',r:[
+      ['','Ст. 29, п. 6','Приоритет приобретения у товаропроизводителей.'],
+      ['','Ст. 35, п. 4, пп. 1)','Тендер среди товаропроизводителей.'],
+      ['','Ст. 37, п. 4','ЗЦП среди товаропроизводителей.'],
+      ['','Ст. 58, п. 5-1','Электронный магазин: не менее двух товаропроизводителей.'],
+      ['','Ст. 59, п. 1, пп. 21)','До 1 000 МРП — у товаропроизводителя (если не отказался в течение 5 рабочих дней).']]},
+    mAdv:{t:'Аванс не менее 30% и быстрая оплата',why:'Производителю нужны оборотные средства на сырьё — аванс снимает потребность в дорогом кредите.',r:[
+      ['','Ст. 61, п. 9','Предоплата не менее 30% суммы договора с товаропроизводителем.'],
+      ['','Ст. 64, п. 2','Аванс выплачивается не позднее 20 рабочих дней.'],
+      ['','Ст. 64, п. 4','Без обеспечения возврата аванса оплата производится без аванса.'],
+      ['','Ст. 61, п. 12','Сокращённый срок расчёта с товаропроизводителем.']]},
+    mSec:{t:'Освобождение от обеспечения',why:'Обеспечения (гарантии банка) замораживают деньги производителя; для товаропроизводителей они отменены.',r:[
+      ['','Ст. 36, п. 6, пп. 4)','Товаропроизводители закупаемого товара не вносят обеспечение тендерной заявки.'],
+      ['chk','Ст. 43, п. 7, пп. 3)','Требование об обеспечении исполнения договора не распространяется на товаропроизводителей закупаемого товара. Номер пункта сверить.'],
+      ['','Ст. 64','Обеспечение исполнения договора и возврата аванса.']]},
+    mPrice:{t:'Пересмотр цены при росте сырья',why:'Защищает производителя по длинным договорам: при скачке цен на сырьё договор можно скорректировать, не разрывая его.',r:[
+      ['','Ст. 65, п. 1, пп. 8)','Увеличение суммы договора с товаропроизводителем, если стоимость сырья/комплектующих выросла более чем на 10%; не чаще раза в квартал и двух раз в год; обоснование поставщика и маркетинговое заключение.']]},
+    pool:{t:'Пул импортозамещения',why:'Пул — это заявленный компаниями группы спрос на импортные позиции, под который инвестор может предложить новое производство.',r:[
+      ['','Ст. 3','Оператор Фонда по закупкам разрабатывает и сопровождает порядок заключения и исполнения офтейк-контрактов.'],
+      ['','Ст. 11','Консолидация потребности группы.'],
+      ['ext','Порядок программы содействия созданию новых производств, версия 4.0','Формирование пула и приём заявок по его позициям.']]},
+    offtakeProg:{t:'Отбор проектов под офтейк',why:'Заявка подаётся в любое время по позициям пула, оценивается по 13 критериям, решение принимает комиссия Фонда. Эти правила — в отдельном документе Фонда, не в Порядке.',r:[
+      ['ext','Порядок программы содействия созданию новых производств, версия 4.0','Заявки — в любое время; оценка по 13 критериям; решение комиссии Фонда. Сверить на skc.kz.'],
+      ['','Ст. 3','Оператор разрабатывает и сопровождает порядок офтейк-контрактов.']]},
+    offtake:{t:'Офтейк-контракт',why:'Гарантированный спрос даёт инвестору возможность получить банковский кредит: договор заключается без конкурса и на долгий срок.',r:[
+      ['','Ст. 59, п. 1, пп. 8)','Основание ОИ: офтейк-контракт с поставщиком в рамках проекта по созданию новых производств.'],
+      ['','Ст. 61, п. 8','Долгосрочный договор — до 10 лет (исключения — по постановлению Правительства, стратегии или инвестпроекту).'],
+      ['','Ст. 3','Оператор сопровождает заключение и исполнение офтейк-контрактов.'],
+      ['ext','Закон РК «О промышленной политике», ст. 47, 48, 48-1','Офтейк и договоры гарантированного закупа 1–10 лет; 1-й год — 100% объёма, далее не менее 50%. Сверить с текстом закона.']]},
+    pOI:{t:'Снизить долю закупок из одного источника',why:'Основания ОИ в Порядке исчерпывающие, но по объёму они не ограничены. KPI и отчёт по основаниям покажут, какие подпункты дают основной объём.',r:[
+      ['','Ст. 59, п. 1','Основания ОИ — база для отчёта «сумма по каждому подпункту».'],
+      ['','Ст. 70','Отчётность по закупкам — сюда добавить ежеквартальный отчёт по основаниям ОИ.'],
+      ['chk','Вне Порядка','KPI для ПК устанавливается решениями органов управления — согласовать.']]},
+    pVC:{t:'Повысить ВЦ в товарах',why:'Сейчас Порядок стимулирует закупки у производителей, но не учитывает глубину переработки. Методика ВЦ — вне Порядка.',r:[
+      ['','Ст. 29, п. 6; ст. 61, п. 15','Действующие механизмы: приоритет и обязательство поставить товар собственного производства.'],
+      ['chk','Методика расчёта ВЦ','Отдельного регулирования в Порядке нет; изменения — с уполномоченными органами.']]},
+    pPool:{t:'Агрегировать спрос в «якорные лоты»',why:'Мелкие разрозненные позиции не окупают завод. Порядок уже позволяет консолидировать потребность и закупать централизованно.',r:[
+      ['','Ст. 11','Консолидация потребности.'],
+      ['','Ст. 30','Централизованные закупки и определение организатора.'],
+      ['','Ст. 4–7','Категорийные стратегии по приоритетным категориям.'],
+      ['','Ст. 59, п. 1, пп. 8)','Офтейк под агрегированный лот.']]},
+    pExcl:{t:'Прозрачность исключения проектов',why:'Причины выбытия одобренных проектов не публикуются. Нужен мониторинг исполнения офтейков.',r:[
+      ['','Ст. 3','Оператор сопровождает исполнение офтейк-контрактов.'],
+      ['','Ст. 63','Выполнение и мониторинг обязательств по договору.'],
+      ['ext','Порядок программы новых производств, версия 4.0','Основания исключения проектов — сверить.']]},
+    pPseudo:{t:'Отсечь псевдопроизводителей',why:'Сборка и перепродажа импорта под видом производства подрывает преференции. Порядок уже даёт инструменты проверки и санкций.',r:[
+      ['','Ст. 61, п. 15','Обязательство поставить товар собственного производства, подтверждение выпиской из Реестра.'],
+      ['','Ст. 42, п. 8-1','Выезд комиссии на производство поставщика.'],
+      ['','Ст. 26, п. 2; п. 8','Недостоверная информация — включение в перечень ненадёжных поставщиков на 24 месяца.'],
+      ['','Ст. 31, п. 1, пп. 1)','Ненадёжные поставщики не допускаются к закупкам.']]},
+    ask:{t:'Что требуется от руководства',why:'Изменения в Порядок вносятся решением Совета директоров Фонда, проект готовит Оператор Фонда по закупкам.',r:[
+      ['','Ст. 3','Компетенция Фонда и Оператора в управлении закупочной деятельностью.'],
+      ['ext','Решение СД Фонда (как № 193 от 03.03.2022)','Утверждение изменений в Порядок.'],
+      ['chk','Закон РК о закупках отдельных субъектов квазигоссектора','Согласование Порядка с Минфином — реквизиты сверить.']]}
+  };
+  var dr=document.getElementById('drawer'),ov=document.getElementById('ov'),last=null;
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+  function openNorm(k,src){var n=N[k];if(!n)return;last=src;
+    document.getElementById('drT').textContent=n.t;
+    var h='<h4>Обоснование</h4><div class="why">'+esc(n.why)+'</div><h4>Нормы</h4>';
+    n.r.forEach(function(r){var cls=r[0]?' '+r[0]:'',lab=(r[0]==='ext'||/^(Решение|Вне|Методика|Закон|Порядок программы|Правила|Годовой)/.test(r[1]))?r[1]:P+r[1];
+      h+='<div class="ref'+cls+'"><b>'+esc(lab)+(r[0]==='chk'?'<span class="tag">сверить</span>':'')+'</b>'+esc(r[2])+'</div>';});
+    document.getElementById('drB').innerHTML=h;tip.style.opacity=0;
+    dr.classList.add('on');ov.classList.add('on');document.getElementById('drX').focus();}
+  function closeNorm(){dr.classList.remove('on');ov.classList.remove('on');if(last)last.focus();}
+  document.querySelectorAll('[data-norm]').forEach(function(el){
+    el.setAttribute('tabindex','0');el.setAttribute('role','button');
+    el.addEventListener('click',function(e){e.stopPropagation();openNorm(el.dataset.norm,el);});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openNorm(el.dataset.norm,el);}});
+  });
+  ov.onclick=closeNorm;document.getElementById('drX').onclick=closeNorm;
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&dr.classList.contains('on')){e.stopImmediatePropagation();closeNorm();}},true);
+
+  document.addEventListener('keydown',function(e){
+    if(dr.classList.contains('on'))return;
+    if(!body.classList.contains('present'))return;
+    if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();show(i+1);}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1);}
+    else if(e.key==='Escape')exit();
+  });
+  document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement&&body.classList.contains('present'))body.classList.remove('present');});
+})();
+</script>
+</body>
+</html>
